@@ -1,4 +1,4 @@
-# Ethernet Example
+# Ethernet Example ( customized for Olimex ESP32 EVB-REV-B with LAN8710 CAN & more ) 
 
 Initialises the ethernet interface and enables it, then sends DHCP requests and tries to obtain a DHCP lease. If successful then you will be able to ping the device.
 
@@ -6,15 +6,16 @@ Initialises the ethernet interface and enables it, then sends DHCP requests and 
 
 Use "make menuconfig" to set the PHY model and the PHY address, and configure the SMI I/O pins (see below). These configuration items will vary depending on the hardware configuration you are using.
 
-The default example configuration is correct for Espressif's Ethernet board with TLK110 PHY. Other hardware will require different configuration and/or changes to the example.
+The customize default example configuration is correct for Olimex ESP32 EVB-REV B Ethernet board with LAN8710 PHY. 
 
 ## PHY Address
 
-The PHY address depends on the hardware and the PHY configuration. Consult the documentation/datasheet for the PHY hardware you have.
+The PHY address depends on the hardware and the PHY configuration. Olimex ESP EVB-REV-B use PHY address 0.
 
-* Default address 31 is correct for Espressif's Ethernet board with TLK110 PHY.
+FYI:
+* Address 31 is correct for Espressif's Ethernet board with TLK110 PHY.
 * Address 1 is correct for the common Waveshare LAN8720 PHY breakout.
-* Address 0 is correct for the Olimex ESP32 EVB REV B IoT LAN8710 PHY Board with CAN
+* Default Address 0 is correct for the Olimex ESP32 EVB REV B IoT LAN8710 PHY Board with CAN
 * Other LAN8720 breakouts may take address 0.
 
 If the PHY address is incorrect then the EMAC will initialise but all attempts to read/write configuration registers on the PHY will fail.
@@ -44,8 +45,7 @@ For the example, these pins are configured via `make menuconfig` under the Examp
 | 23                   | MDC         | Output to PHY |
 | 18                   | MDIO        | Bidirectional |
 
-The defaults in the example are correct for Espressif's Ethernet development board.
-Also defaults in the example are correct for the Olimex ESP32 EVB REV B IoT LAN8710 PHY Board with CAN.
+The defaults in the customized example are correct for Olimex EVB-REV-B Ethernet IoT board with CAN.
 
 ## Note about GPIO0
 
@@ -55,7 +55,7 @@ One solution is to use an additional GPIO as a "power pin", which either powers 
 
 See the example source code to see how the "power pin" GPIO can be managed in software.
 
-The example defaults to using GPIO 17 for this function, but it can be overriden. On Espressif's Ethernet development board, GPIO 17 is the power pin used to enable/disable the PHY oscillator.
+To using GPIO 17 for this function can be overriden. Example on Espressif's Ethernet development board, GPIO 17 is the power pin used to enable/disable the PHY oscillator.
 
 On Olimex ESP32 EVB REV B IoT LAN8710 PHY Board with CAN there is a own solution from Olimex.
 For deeper Information look in the Hardware folder on Olimex Github. There is the Shematic.
