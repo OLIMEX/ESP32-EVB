@@ -1,4 +1,5 @@
-# Ethernet Example ( customized for Olimex ESP32 EVB-REV-B with LAN8710 CAN & more ) 
+# Ethernet Example 
+( customized for Olimex ESP32 EVB-REV-B with LAN8710 CAN & more ) 
 
 Initialises the ethernet interface and enables it, then sends DHCP requests and tries to obtain a DHCP lease. If successful then you will be able to ping the device.
 
