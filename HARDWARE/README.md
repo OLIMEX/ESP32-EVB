@@ -1,6 +1,8 @@
 # ESP32-EVB
 ESP32 WiFi / BLE development board with Ethernet, relays, microSD card, CAN, infrared, Li-Po charger, GPIOs made with KiCAD
 
+Notice that we use the latest nightly KiCad builds.
+
 Hardware revisions:
 
 - revision A - internal, not released
