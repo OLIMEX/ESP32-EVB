@@ -22,8 +22,8 @@
  * Pin assignment:
  *
  * - master:
- *    GPIO16 is assigned as the data signal of i2c master port
- *    GPIO13 is assigned as the clock signal of i2c master port
+ *    GPIO13 is assigned as the data signal of i2c master port
+ *    GPIO16 is assigned as the clock signal of i2c master port
  *
  * Connection:
  *
