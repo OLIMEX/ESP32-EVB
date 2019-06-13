@@ -1,0 +1,131 @@
+PC side using iperf-1.7.0-win32  (https://iperf.fr/iperf-download.php#windows)
+
+ESP32-EVB (Client)
+iperf -c 192.168.0.51 -i 1
+
+mode=tcp-client sip=192.168.0.182:5001, dip=192.168.0.51:5001, interval=1, time=30
+esp32>
+        Interval Bandwidth
+   0-   1 sec       29.10 Mbits/sec
+   1-   2 sec       29.36 Mbits/sec
+   2-   3 sec       28.05 Mbits/sec
+   3-   4 sec       29.36 Mbits/sec
+   4-   5 sec       29.75 Mbits/sec
+   5-   6 sec       29.49 Mbits/sec
+   6-   7 sec       29.49 Mbits/sec
+   7-   8 sec       29.10 Mbits/sec
+   8-   9 sec       29.49 Mbits/sec
+   9-  10 sec       30.15 Mbits/sec
+  10-  11 sec       29.23 Mbits/sec
+  11-  12 sec       29.36 Mbits/sec
+  12-  13 sec       29.62 Mbits/sec
+  13-  14 sec       29.10 Mbits/sec
+  14-  15 sec       29.23 Mbits/sec
+  15-  16 sec       29.23 Mbits/sec
+  16-  17 sec       29.23 Mbits/sec
+  17-  18 sec       29.23 Mbits/sec
+  18-  19 sec       29.23 Mbits/sec
+  19-  20 sec       29.36 Mbits/sec
+  20-  21 sec       29.49 Mbits/sec
+  21-  22 sec       28.84 Mbits/sec
+  22-  23 sec       29.23 Mbits/sec
+  23-  24 sec       29.10 Mbits/sec
+  24-  25 sec       29.10 Mbits/sec
+  25-  26 sec       28.57 Mbits/sec
+  26-  27 sec       29.23 Mbits/sec
+  27-  28 sec       29.23 Mbits/sec
+  28-  29 sec       29.62 Mbits/sec
+  29-  30 sec       29.62 Mbits/sec
+   0-  30 sec       29.27 Mbits/sec
+I (135232) iperf: iperf exit
+
+
+PC (Server)
+iperf -s -i 1
+
+[248] local 192.168.0.51 port 5001 connected with 192.168.0.182 port 53569
+[ ID] Interval       Transfer     Bandwidth
+[248]  0.0- 1.0 sec  3.45 MBytes  29.0 Mbits/sec
+[248]  1.0- 2.0 sec  3.51 MBytes  29.4 Mbits/sec
+[248]  2.0- 3.0 sec  3.33 MBytes  28.0 Mbits/sec
+[248]  3.0- 4.0 sec  3.49 MBytes  29.3 Mbits/sec
+[248]  4.0- 5.0 sec  3.56 MBytes  29.9 Mbits/sec
+[248]  5.0- 6.0 sec  3.52 MBytes  29.5 Mbits/sec
+[248]  6.0- 7.0 sec  3.51 MBytes  29.4 Mbits/sec
+[248]  7.0- 8.0 sec  3.47 MBytes  29.1 Mbits/sec
+[248]  8.0- 9.0 sec  3.52 MBytes  29.5 Mbits/sec
+[248]  9.0-10.0 sec  3.58 MBytes  30.0 Mbits/sec
+[248] 10.0-11.0 sec  3.50 MBytes  29.3 Mbits/sec
+[248] 11.0-12.0 sec  3.50 MBytes  29.4 Mbits/sec
+[248] 12.0-13.0 sec  3.53 MBytes  29.7 Mbits/sec
+[248] 13.0-14.0 sec  3.47 MBytes  29.1 Mbits/sec
+[248] 14.0-15.0 sec  3.48 MBytes  29.2 Mbits/sec
+[248] 15.0-16.0 sec  3.49 MBytes  29.3 Mbits/sec
+[248] 16.0-17.0 sec  3.48 MBytes  29.2 Mbits/sec
+[248] 17.0-18.0 sec  3.49 MBytes  29.2 Mbits/sec
+[248] 18.0-19.0 sec  3.47 MBytes  29.1 Mbits/sec
+[248] 19.0-20.0 sec  3.50 MBytes  29.4 Mbits/sec
+[ ID] Interval       Transfer     Bandwidth
+[248] 20.0-21.0 sec  3.51 MBytes  29.5 Mbits/sec
+[248] 21.0-22.0 sec  3.45 MBytes  28.9 Mbits/sec
+[248] 22.0-23.0 sec  3.47 MBytes  29.1 Mbits/sec
+[248] 23.0-24.0 sec  3.47 MBytes  29.1 Mbits/sec
+[248] 24.0-25.0 sec  3.47 MBytes  29.1 Mbits/sec
+[248] 25.0-26.0 sec  3.41 MBytes  28.6 Mbits/sec
+[248] 26.0-27.0 sec  3.48 MBytes  29.2 Mbits/sec
+[248] 27.0-28.0 sec  3.48 MBytes  29.2 Mbits/sec
+[248] 28.0-29.0 sec  3.54 MBytes  29.7 Mbits/sec
+[248] 29.0-30.0 sec  3.52 MBytes  29.5 Mbits/sec
+[248]  0.0-30.0 sec   105 MBytes  29.3 Mbits/sec
+
+
+
+
+
+
+
+
+
+
+
+ESP32-EVB (Server) max 10 seconds time (otherwise Watchdog resets)
+iperf -s -i 1 -t 10
+
+mode=tcp-server sip=192.168.0.182:5001, dip=0.0.0.0:5001, interval=1, time=10
+esp32> accept: 192.168.0.51,50822
+
+        Interval Bandwidth
+   0-   1 sec       21.84 Mbits/sec
+   1-   2 sec       22.38 Mbits/sec
+   2-   3 sec       22.09 Mbits/sec
+   3-   4 sec       25.80 Mbits/sec
+   4-   5 sec       26.86 Mbits/sec
+   5-   6 sec       26.87 Mbits/sec
+   6-   7 sec       26.82 Mbits/sec
+   7-   8 sec       26.73 Mbits/sec
+   8-   9 sec       26.76 Mbits/sec
+   9-  10 sec       26.83 Mbits/sec
+   0-  10 sec       25.30 Mbits/sec
+I (356642) iperf: iperf exit
+
+
+
+PC (Client)
+iperf -c 192.168.0.182 -i 1 -t 10
+
+Client connecting to 192.168.0.182, TCP port 5001
+TCP window size: 8.00 KByte (default)
+------------------------------------------------------------
+[168] local 192.168.0.51 port 50822 connected with 192.168.0.182 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[168]  0.0- 1.0 sec  2.60 MBytes  21.8 Mbits/sec
+[168]  1.0- 2.0 sec  2.67 MBytes  22.4 Mbits/sec
+[168]  2.0- 3.0 sec  2.63 MBytes  22.1 Mbits/sec
+[168]  3.0- 4.0 sec  3.07 MBytes  25.8 Mbits/sec
+[168]  4.0- 5.0 sec  3.20 MBytes  26.9 Mbits/sec
+[168]  5.0- 6.0 sec  3.21 MBytes  26.9 Mbits/sec
+[168]  6.0- 7.0 sec  3.19 MBytes  26.7 Mbits/sec
+[168]  7.0- 8.0 sec  3.19 MBytes  26.7 Mbits/sec
+[168]  8.0- 9.0 sec  3.20 MBytes  26.8 Mbits/sec
+[168]  9.0-10.0 sec  3.20 MBytes  26.8 Mbits/sec
+[168]  0.0-10.0 sec  30.2 MBytes  25.3 Mbits/sec
