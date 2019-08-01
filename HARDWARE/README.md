@@ -33,3 +33,28 @@ Hardware revisions:
 
 1. U6 changed from MCP2551-I/SN(SOIC-8_150mil) to MCP2562-E/SN(SOIC-8_150mil)
 2. R58 changed from NA/R0603 to 0R/R0603.
+
+- revision E - changes:
+
+MCP2551 got "Not recommended for new designs" status so it is replaced with MCP2562 and this lead to:
+
+1. R58(0R/R0603) was deleted and U6's pin<5> was connected to +3.3V.
+2. R52(680R/R0603) was deleted.
+3. R50(330R/R0603) and R51(330R/R0603) were deleted.
+4. The MCP2562-E_SN(SOIC-8_150mil)'s symbol was updated, i,.e. U6's component was exchanged with 2562!
+
+Changes related to the problems with ethernet PHY:
+
+5. The following components were added to enable powering on the PHY after the 50MHz oscillator has been started: L5(NA(FB0805/600R/2A)), FET3(WPM2015-3/TR), FET4(BSS138), C29(22uF/6.3V/20%/X5R/C0603), R50(1k/R0603) and R51(10k/R0603).
+
+Changes related to optimizations:
+
+6. R26(330R/R0603) and R27(330R/R0603) were changed to 220R/R0603 to reserve a feeder.
+7. C1 was changed from 47uF/6.3V/20%/X5R/C0805 to NA(47uF/6.3V/20%/X5R/C0805).	
+8. C3 was changed from 47uF/6.3V/20%/X5R/C0805 to NA(47uF/6.3V/20%/X5R/C0805).
+
+- revision F - changes:
+
+1. BUT1 and RST1 new packages.
+2. Minor PCB routing optimizations.
+3. All footprints were updated.
