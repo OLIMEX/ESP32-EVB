@@ -58,3 +58,14 @@ Changes related to optimizations:
 1. BUT1 and RST1 new packages.
 2. Minor PCB routing optimizations.
 3. All footprints were updated.
+
+- revision G - internal, not released
+
+1. Changed the Li-Po charger to BL4054B (was MCP73833 previously).
+
+- revision H
+
+1. CH340 now powered only from USB (not from battery). Added D7 and D8 on TX/RX, levels are adjusted via R35 and R40. Pin #20 now disconnected. SY8089AAAC(SOT23-5) devider now R20 49.9k and R19 220k. R24 now 470ê.
+2. Added battery voltage sense option. This is controlled with jumper BAT/BUT1, C30, R9, and R10. It is not enabled by default to maintain compatiblity with previous revisions.
+3. Added 3D models of the components.
+4. L2 now 2.2uH/1.5A/DCR=72mR/20%/3.00x3.00x1.50mm/CD32(NR3015T2R2M). Some improvements on ESP-WROOM-32_MODULE package.
