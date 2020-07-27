@@ -1,7 +1,6 @@
 # ESP32-EVB
-ESP32 WiFi / BLE development board with Ethernet, relays, microSD card, CAN, infrared, Li-Po charger, GPIOs made with KiCAD
 
-Hardware revisions:
+Hardware revisions changes:
 
 - revision A - internal, not released
 - revision B - initial public release
@@ -63,9 +62,22 @@ Changes related to optimizations:
 
 1. Changed the Li-Po charger to BL4054B (was MCP73833 previously).
 
-- revision H
+- revision H - limited release
 
 1. CH340 now powered only from USB (not from battery). Added D7 and D8 on TX/RX, levels are adjusted via R35 and R40. Pin #20 now disconnected. SY8089AAAC(SOT23-5) devider now R20 49.9k and R19 220k. R24 now 470ê.
 2. Added battery voltage sense option. This is controlled with jumper BAT/BUT1, C30, R9, and R10. It is not enabled by default to maintain compatiblity with previous revisions.
 3. Added 3D models of the components.
 4. L2 now 2.2uH/1.5A/DCR=72mR/20%/3.00x3.00x1.50mm/CD32(NR3015T2R2M). Some improvements on ESP-WROOM-32_MODULE package.
+
+- revision H1 - released
+
+Improved start up for certain hardware setups. Revision H1 has same PCB as revision H (and the PCB of revision H1 says "H") but couple of component changes:
+
+1. Changed R24 from 470k/0603 to 1k/0603, the 1k resistor is soldered over the 470k one to reduce chances of damage.
+
+- revsion I - released
+
+Applied the changes from revision H1 to the PCB and the design, and further improved start-up reliability by adding a capacitor:
+
+1. Added C31(1uF/10V/10%/X5R/C0603) on the ESP_EN signal and R24's value changed from 1k/0603 to 10k/0603;
+2. Added several text lables at the botttom of the board about CAN's connector signals and the battery polarity.
