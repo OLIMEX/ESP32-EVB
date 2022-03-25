@@ -18,28 +18,17 @@ If you have a new Ethernet application to go (for example, connect to IoT cloud 
 
 ### Hardware Required
 
-To run this example, it's recommended that you have an official ESP32 Ethernet development board - [ESP32-Ethernet-Kit](https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/get-started-ethernet-kit.html). This example should also work for 3rd party ESP32 board as long as it's integrated with a supported Ethernet PHY chip. Up until now, ESP-IDF supports up to four Ethernet PHY: `LAN8720`, `IP101`, `DP83848` and `RTL8201`, additional PHY drivers should be implemented by users themselves.
+This example assumes you have an Olimex ESP32-EVB and was tested with a REV I version. The Ethernet PHY is a LAN8710A-EZC. See the Ethernet example in the Expressif ESP32 GitHub repository for information on using different hardware.
 
-Besides that, `esp_eth` component can drive third-party Ethernet module which integrates MAC and PHY and provides common communication interface (e.g. SPI, USB, etc). This example will take the `DM9051`, `W5500` or `KSZ8851SNL` SPI modules as an example, illustrating how to install the Ethernet driver in the same manner.
-
-The ESP-IDF supports the usage of multiple Ethernet interfaces at a time when external modules are utilized which is also demonstrated by this example. There are several options you can combine:
-   * Internal EMAC and one SPI Ethernet module.
-   * Two SPI Ethernet modules of the same type connected to single SPI interface and accessed by switching appropriate CS.
-   * Internal EMAC and two SPI Ethernet modules of the same type. 
-
-#### Pin Assignment
-
-See common pin assignments for Ethernet examples from [upper level](../README.md#common-pin-assignments).
-
-When using two Ethernet SPI modules at a time, they are to be connected to single SPI interface. Both modules then share data (MOSI/MISO) and CLK signals. However, the CS, interrupt and reset pins need to be connected to separate GPIO for each Ethernet SPI module.
-
-### Configure the project
-
-```
-idf.py menuconfig
-```
-
-See common configurations for Ethernet examples from [upper level](../README.md#common-configurations).
+#### Configure the project (including Pin Assignment)
+Set the following options using the Expressif-IDF SDK Configuration Editor (idf.py), or equivalent:
+* Internal EMAC: enabled
+* Ethernet PHY Device: LAN87xx
+* SMI MDC GPIO number: 23
+* SMI MDIO GPIO number: 18
+* PHY Reset GPIO number: -1
+* PHY Address: 0
+* SPI Ethernet: disabled
 
 ### Build, Flash, and Run
 
