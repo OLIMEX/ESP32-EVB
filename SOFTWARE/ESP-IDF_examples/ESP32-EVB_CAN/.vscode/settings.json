@@ -1,0 +1,11 @@
+{
+    "idf.adapterTargetName": "esp32",
+    "files.associations": {
+        "can.h": "c",
+        "twai.h": "c",
+        "can_types.h": "c",
+        "twai_types.h": "c"
+    },
+    "idf.flashType": "UART",
+    "idf.portWin": "COM6"
+}
