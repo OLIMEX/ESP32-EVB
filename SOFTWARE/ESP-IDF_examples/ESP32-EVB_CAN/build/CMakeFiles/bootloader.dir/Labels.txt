@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Users/balano/Documents/GitHub/ESP32-EVB/SOFTWARE/ESP-IDF_examples/ESP32-EVB_CAN/build/CMakeFiles/bootloader
+C:/Users/balano/Documents/GitHub/ESP32-EVB/SOFTWARE/ESP-IDF_examples/ESP32-EVB_CAN/build/CMakeFiles/bootloader.rule
+C:/Users/balano/Documents/GitHub/ESP32-EVB/SOFTWARE/ESP-IDF_examples/ESP32-EVB_CAN/build/CMakeFiles/bootloader-complete.rule
+C:/Users/balano/Documents/GitHub/ESP32-EVB/SOFTWARE/ESP-IDF_examples/ESP32-EVB_CAN/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Users/balano/Documents/GitHub/ESP32-EVB/SOFTWARE/ESP-IDF_examples/ESP32-EVB_CAN/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/balano/Documents/GitHub/ESP32-EVB/SOFTWARE/ESP-IDF_examples/ESP32-EVB_CAN/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/balano/Documents/GitHub/ESP32-EVB/SOFTWARE/ESP-IDF_examples/ESP32-EVB_CAN/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/balano/Documents/GitHub/ESP32-EVB/SOFTWARE/ESP-IDF_examples/ESP32-EVB_CAN/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/balano/Documents/GitHub/ESP32-EVB/SOFTWARE/ESP-IDF_examples/ESP32-EVB_CAN/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/balano/Documents/GitHub/ESP32-EVB/SOFTWARE/ESP-IDF_examples/ESP32-EVB_CAN/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
