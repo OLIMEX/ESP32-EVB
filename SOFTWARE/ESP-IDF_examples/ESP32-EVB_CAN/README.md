@@ -10,33 +10,42 @@ This example demonstrates basic usage of `CAN driver`. The work flow of the exam
 
 1. Install CAN driver
 2. Receive CAN messages
-3. Send CAN messase and receive a response
-4. Enable filter and receive only filtered messages
+3. Send CAN message
+4. Enable filter and receive only filtered messages (not implemented)
+
+Code was heavily based on https://docs.espressif.com/projects/esp-idf/en/release-v3.3/api-reference/peripherals/can.html
 
 If you have a new CAN application to create (for example, J1939 communication to a tank), try this as a basic template, then add your own code.
 
 ## How to use example
+See Build, Flash, and Run below.
 
 ### Hardware Required
 
-This example assumes you have an Olimex ESP32-EVB and was tested with a REV I version. The Ethernet PHY is a LAN8710A-EZC. See the [ESP32 Hardware Reference](https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/) for information on using different hardware.
+This example assumes you have an Olimex ESP32-EVB and was tested with a REV I version. 
 
 #### Pin Assignment
 
+This example uses the embedded ESP32 CAN/TWAI controller. On the ESP32-EVB the pins are assigned as
+
 * CAN-TX is on GPIO5
 * CAN-RX is on GPI35
+
+In the example code, these assignments are hard-coded.
 
 ### Configure the project
 
 ```
 idf.py menuconfig
 ```
-The CAN transceiver is a MCP2562-E/SN. By default it operates on the +5V sourced from the PWR2 connector or USB connector.
+No configuration options have been set up.
+
+The CAN transceiver is a MCP2562-E/SN. By default on the ESP32-EVB it operates on the +5V sourced from the PWR2 connector or USB connector.
 
 
 ### Build, Flash, and Run
 
-Build the project and flash it to the board, then run monitor tool to view serial output:
+Build the project and flash it to the board, then run monitor tool to view serial output. Use a CAN monitoring tool to see the transmitted message.
 
 ```
 idf.py -p PORT build flash monitor
@@ -51,7 +60,13 @@ See the [Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/l
 ## Example Output
 
 ```bash
-[TODO]
+Driver installed
+Driver started
+Message received
+Message is in Extended Format
+ID:1CEBFFFA, data:2 90 E7 FF FF FF FF FF
+Message queued for transmission
+ESP_ERR_TIMEOUT
 ```
 
 ## Troubleshooting
