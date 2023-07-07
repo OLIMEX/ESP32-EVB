@@ -119,4 +119,7 @@ Applied the changes from revision H1 to the PCB and the design, and further impr
 2. Removed "GPIO4" from the "Internal Bootstrapping Resistors" table.
 
 
+- revision K1 - released
 
+1. Changed reset IC from VDA2710NTA(SOT-23)to HX7027 (due to unavailability of VDA2710NTA).
+2. HX7027 has slightly bigger consumption and when powered trought R52 the voltage might get too low; so also changed R52 from 220k to 100k.
