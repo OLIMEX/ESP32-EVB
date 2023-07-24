@@ -17,8 +17,8 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <stdio.h>
+#include "freertos/FreeRTOS.h"
 #include "driver/gpio.h"
-#include "sdkconfig.h"
 
 #define OLIMEX_REL1_PIN     32
 #define OLIMEX_REL2_PIN     33
@@ -46,8 +46,8 @@ void app_main()
 {
 
     /* Make pads GPIO */
-    gpio_pad_select_gpio(RELAY_GPIO);
-    gpio_pad_select_gpio(OLIMEX_BUT_PIN);
+    gpio_reset_pin(RELAY_GPIO);
+    gpio_reset_pin(OLIMEX_BUT_PIN);
 
     /* Set the Relay as a push/pull output */
     gpio_set_direction(RELAY_GPIO, GPIO_MODE_OUTPUT);
