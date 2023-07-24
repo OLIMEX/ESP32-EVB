@@ -1,0 +1,7 @@
+#
+# SD/MMC Example Configuration
+#
+CONFIG_EXAMPLE_FORMAT_IF_MOUNT_FAILED=y
+# CONFIG_EXAMPLE_SDMMC_BUS_WIDTH_4 is not set
+CONFIG_EXAMPLE_SDMMC_BUS_WIDTH_1=y
+# end of SD/MMC Example Configuration
