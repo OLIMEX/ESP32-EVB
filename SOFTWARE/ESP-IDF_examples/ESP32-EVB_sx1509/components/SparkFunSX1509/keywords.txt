@@ -1,0 +1,57 @@
+#######################################
+# Syntax Coloring Map For SX1509
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+SX1509	KEYWORD1
+sx1509Class	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+init	KEYWORD2
+begin	KEYWORD2
+reset	KEYWORD2
+pinDir	KEYWORD2
+writePin	KEYWORD2
+readPin	KEYWORD2
+ledDriverInit	KEYWORD2
+pwm	KEYWORD2
+sync	KEYWORD2
+blink	KEYWORD2
+breathe	KEYWORD2
+setupBlink	KEYWORD2
+enableInterrupt	KEYWORD2
+interruptSource	KEYWORD2
+configClock	KEYWORD2
+configureClock	KEYWORD2
+debounceEnable	KEYWORD2
+debounceConfig	KEYWORD2
+debounceTime	KEYWORD2
+debouncePin	KEYWORD2
+debounceKeypad	KEYWORD2
+keypad	KEYWORD2
+readKeypad	KEYWORD2
+getRow	KEYWORD2
+getCol	KEYWORD2
+checkInterrupt	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+SparkFunSX1509	LITERAL1
+LINEAR	LITERAL1
+LOGARITHMIC	LITERAL1
+INTERNAL_CLOCK_2MHZ	LITERAL1
+SOFTWARE_RESET	LITERAL1
+HARDWARE_RESET	LITERAL1
+
+#######################################
+# Blue Constants (LITERAL2, Constants, RESERVED_WORD_2)
+#######################################
+ANALOG_OUTPUT	LITERAL2	Constants	RESERVED_WORD_2
