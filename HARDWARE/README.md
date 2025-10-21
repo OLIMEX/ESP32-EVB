@@ -123,3 +123,17 @@ Applied the changes from revision H1 to the PCB and the design, and further impr
 
 1. Changed reset IC from VDA2710NTA(SOT-23)to HX7027 (due to unavailability of VDA2710NTA).
 2. HX7027 has slightly bigger consumption and when powered trought R52 the voltage might get too low; so also changed R52 from 220k to 100k.
+
+- revision K2 - released
+------
+1. Changed battery chager to TP4054-42-SOT25-R;
+2. Changed R8 from 2k to 10k to reduce battery charger current to 100mA.
+
+- revision L - released
+------
+
+1. Migated the whole project to KiCad7;
+2. R57 deleted to reduce possible environment noise picking in combination with relay switching;
+3. Relays changed;
+4. U2-SY8089 changed to TPS62A02ADRLR(SOT-563-6);
+5. CH340 changed with smaller variant ch340X.
